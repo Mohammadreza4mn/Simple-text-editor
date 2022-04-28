@@ -1,38 +1,59 @@
-.App {
-  text-align: center;
+.app {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  grid-column: 2/12;
+}
+.app__container-editor {
+  display: flex;
+}
+.app__container-text {
+  margin-right: 30px;
+}
+.app__container-control {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+.app__container-control > button {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.app__container-control-red {
+  background-color: red;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__container-control-yellow {
+  background-color: yellow;
+  color: black !important;
+}
+.app__container-control-green {
+  background-color: green;
+}
+.app__container-control-white {
+  background-color: white;
+  color: black !important;
+}
+.app__container-control-add {
+  background-color: cornflowerblue;
+}
+.app__container-note {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+.app__container-note__btn {
+  background-color: rgb(98, 152, 17);
+  border: unset;
+}
+.app__container-note__help {
+  color: rgb(234, 58, 58);
+  margin: 5px 0;
 }
