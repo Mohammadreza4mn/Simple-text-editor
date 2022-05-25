@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Credit-Card-Landing-page/static/css/main.88e2586f.css",
+    "main.js": "/Credit-Card-Landing-page/static/js/main.2a1e3cfa.js",
+    "static/js/787.2d1ac56b.chunk.js": "/Credit-Card-Landing-page/static/js/787.2d1ac56b.chunk.js",
+    "index.html": "/Credit-Card-Landing-page/index.html",
+    "main.88e2586f.css.map": "/Credit-Card-Landing-page/static/css/main.88e2586f.css.map",
+    "main.2a1e3cfa.js.map": "/Credit-Card-Landing-page/static/js/main.2a1e3cfa.js.map",
+    "787.2d1ac56b.chunk.js.map": "/Credit-Card-Landing-page/static/js/787.2d1ac56b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88e2586f.css",
+    "static/js/main.2a1e3cfa.js"
+  ]
+}
