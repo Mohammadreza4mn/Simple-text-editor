@@ -17,7 +17,7 @@ function App() {
     if (textInfo.selectedText) {
       let clearSelectedText = textInfo.selectedText.replace("</span>", "");
 
-      ["red", "yellow", "green"].forEach(
+      ["#ff000085", "yellow", "#0080008a"].forEach(
         (item) =>
           (clearSelectedText = clearSelectedText.replace(
             `<span style="background-color: ${item}">`,
@@ -65,21 +65,15 @@ function App() {
       <div className="app__container">
         <div className="app__container-editor">
           <div className="app__container-text">
-            <h1>Lorem ipsum</h1>
+            <h1>لورم ایپسوم</h1>
             <p ref={ref} onMouseUp={getSelection}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
             </p>
           </div>
           <div className="app__container-control">
             <button
               className="app__container-control-red"
-              onClick={() => handleChangeColor("red")}
+              onClick={() => handleChangeColor("#ff000085")}
             >
               R
             </button>
@@ -91,7 +85,7 @@ function App() {
             </button>
             <button
               className="app__container-control-green"
-              onClick={() => handleChangeColor("green")}
+              onClick={() => handleChangeColor("#0080008a")}
             >
               G
             </button>
@@ -111,23 +105,36 @@ function App() {
         </div>
         {toggleBtn && (
           <div id="note" className="app__container-note">
-            <b>Enter note:</b>
+            <b>متن جدید :</b>
             <input
+            className="app__container-note__input"
               value={textInfo.note}
               onChange={({ target }) =>
                 setTextInfo({ ...textInfo, note: target.value })
               }
             />
+            {!(textInfo.note && textInfo.selectedText) &&
             <small className="app__container-note__help">
-              please select text after you have entered the note; then press
-              "Add" button
-            </small>
-            <button
-              className="app__container-note__btn"
-              onClick={handleAddNote}
-            >
-              Add
-            </button>
+              لطفا بعد از وارد کردن متن، سطری که می خواهید با متن شما جایگزین شود را انتخاب نمایید
+            </small>}
+            <div>
+              <button
+                className="app__container-note__btn--cancel"
+                onClick={()=>{
+                  setToggleBtn(false)
+                  setTextInfo({ selectedText: "", note: "" })
+                }}
+                  
+              >
+                لغو
+              </button>
+              <button
+                className="app__container-note__btn--add"
+                onClick={handleAddNote}
+              >
+                افزودن
+              </button>
+            </div>
           </div>
         )}
       </div>

@@ -3,6 +3,7 @@
   display: grid;
   place-content: center;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+  direction: rtl;
 }
 .app__container {
   display: flex;
@@ -13,7 +14,7 @@
   display: flex;
 }
 .app__container-text {
-  margin-right: 30px;
+  margin-left: 30px;
 }
 .app__container-control {
   display: flex;
@@ -49,11 +50,21 @@ button {
   flex-direction: column;
   align-items: baseline;
 }
-.app__container-note__btn {
+.app__container-note button {
+  font-weight: bold;
+}
+.app__container-note__btn--add {
   background-color: rgb(98, 152, 17);
   border: unset;
+  margin: 15px;
+}
+.app__container-note__btn--cancel {
+  background-color: #f96060;
+  border: unset;
+}
+.app__container-note__input {
+  margin: 8px 0 3px;
 }
 .app__container-note__help {
   color: rgb(234, 58, 58);
-  margin: 5px 0;
 }
